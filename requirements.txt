@@ -1,0 +1,10 @@
+flask
+openai
+python-dotenv
+PyPDF2
+python-docx
+flask-cors
+markdown
+langdetect
+requests
+python-dotenv
