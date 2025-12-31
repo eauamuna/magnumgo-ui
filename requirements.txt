@@ -8,3 +8,4 @@ markdown
 langdetect
 requests
 python-dotenv
+gunicorn
