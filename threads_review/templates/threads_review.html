@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Threads Keyword Search – App Review Demo</title>
+</head>
+<body>
+<h2>Threads Keyword Search (Demo)</h2>
+
+<a href="/threads/login">
+    <button>Login with Threads</button>
+</a>
+
+<hr>
+
+<form method="post" action="/threads/search">
+    <input name="keyword" placeholder="Enter keyword" required>
+    <button type="submit">Search</button>
+</form>
+
+{% if results %}
+<hr>
+<ul>
+{% for post in results %}
+    <li>
+        <b>@{{ post.username }}</b><br>
+        {{ post.text }}<br>
+        <a href="{{ post.permalink }}" target="_blank">View</a>
+    </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+</body>
+</html>
