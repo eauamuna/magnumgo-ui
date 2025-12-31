@@ -1,6 +1,5 @@
 """Flask backend for the TrustDoc.ai landing and document analysis MVP."""
 from threads_review.routes import threads_review_bp
-from __future__ import annotations
 
 import os
 from io import BytesIO
