@@ -1,0 +1,520 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h1>
+        <span data-lang="en">Understand legal risk in seconds with TrustDoc.ai</span>
+        <span data-lang="ru" hidden>Понимайте юридические риски за секунды с TrustDoc.ai</span>
+        <span data-lang="kz" hidden>TrustDoc.ai арқылы заңдық тәуекелдерді секундтарда біліңіз</span>
+      </h1>
+      <p class="hero-sub" data-lang="en">AI-powered document analysis based on the laws of the Republic of Kazakhstan. Identify penalties, auto-renewals, and legal risks in seconds.</p>
+      <p class="hero-sub" data-lang="ru" hidden>AI-анализ документов на основе законов Республики Казахстан. Выявляйте неустойки, авто-продления и юридические риски за секунды.</p>
+      <p class="hero-sub" data-lang="kz" hidden>Қазақстан Республикасының заңдарына негізделген AI құжаттарды талдау. Айыппұлдар мен заңдық тәуекелдерді секундтар ішінде анықтаңыз.</p>
+
+      <div class="hero-ctas">
+        <a href="{{ url_for('product') }}" class="btn btn-primary" data-cta="hero-product" id="cta-hero">
+          <span data-lang="en">Product</span>
+          <span data-lang="ru" hidden>Продукт</span>
+          <span data-lang="kz" hidden>Өнім</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="card preview-card">
+        <div class="preview-header">
+          <span class="badge">
+            <span data-lang="en">TrustDoc.ai Insight</span>
+            <span data-lang="ru" hidden>TrustDoc.ai инсайт</span>
+            <span data-lang="kz" hidden>TrustDoc.ai инсайты</span>
+          </span>
+          <span class="status-dot"></span>
+        </div>
+        <div class="preview-body">
+          <p data-lang="en">Lease Agreement · Risk Summary</p>
+          <p data-lang="ru" hidden>Договор аренды · Сводка рисков</p>
+          <p data-lang="kz" hidden>Жалға алу келісімі · Тәуекелдер қорытындысы</p>
+          <ul class="insight-list">
+            <li>
+              <span class="dot dot-red"></span>
+              <span data-lang="en">Early termination penalty flagged</span>
+              <span data-lang="ru" hidden>Отмечена неустойка за досрочное расторжение</span>
+              <span data-lang="kz" hidden>Ерте тоқтатуға айыппұл белгіленді</span>
+            </li>
+            <li>
+              <span class="dot dot-amber"></span>
+              <span data-lang="en">Auto-renewal clause requires notice 90 days in advance</span>
+              <span data-lang="ru" hidden>Пункт авто-продления требует уведомление за 90 дней</span>
+              <span data-lang="kz" hidden>Автожаңарту тармағы 90 күн бұрын хабарлауды талап етеді</span>
+            </li>
+            <li>
+              <span class="dot dot-green"></span>
+              <span data-lang="en">Security deposit aligned with local regulations</span>
+              <span data-lang="ru" hidden>Залог соответствует местным нормам</span>
+              <span data-lang="kz" hidden>Кепіл жарнасы жергілікті талаптарға сай</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <h2 data-lang="en">About TrustDoc.ai</h2>
+    <h2 data-lang="ru" hidden>О TrustDoc.ai</h2>
+    <h2 data-lang="kz" hidden>TrustDoc.ai туралы</h2>
+    <p data-lang="en">TrustDoc.ai is a web service for contract review and document analysis. Our goal is to help individuals, freelancers, and small businesses identify legal risks early and make informed decisions. The system focuses on contract review, clause detection, risk analysis, and compliance hints for typical agreements such as lease, employment, service, and loan contracts. Unlike manual checks, TrustDoc.ai delivers fast screening with transparent explanations, so you can understand what matters before consulting a lawyer. At launch, you will be able to upload a document and receive structured highlights with suggested actions. We are building a dependable, privacy-aware experience and will expand with collaboration tools and integrations.</p>
+    <p data-lang="ru" hidden>TrustDoc.ai — это веб-сервис для онлайн проверки договора и анализа документов. Наша задача — помочь физическим лицам, фрилансерам и малому бизнесу заранее видеть юридические риски и принимать взвешенные решения. Сервис фокусируется на анализе документов, подсветке ключевых пунктов, риск-анализе и подсказках по соответствию требованиям для типовых соглашений: аренда, трудовой договор, договор оказания услуг, кредитный договор и др. В отличие от полностью ручной проверки, TrustDoc.ai быстро показывает важные места и объясняет, почему они могут быть рискованными, чтобы вы успели обсудить это с юристом. На запуске вы сможете загрузить документ и получить структурированные подсветки с рекомендациями. Мы уделяем внимание приватности данных и планируем развивать совместную работу и интеграции.</p>
+    <p data-lang="kz" hidden>TrustDoc.ai — бұл келісімшарт пен құжаттарды талдауға арналған веб-қызмет. Біздің мақсатымыз — жеке тұлғаларға, фрилансерлерге және шағын бизнеске заңдық тәуекелдерді ерте анықтауға және саналы шешім қабылдауға көмектесу. Жүйе келісімшартты талдау, тармақтарды анықтау, тәуекелді бағалау және жалға алу, жұмыс, қызмет көрсету, несие сияқты типтік келісімдерге арналған сәйкестік кеңестерімен жұмыс істейді. Қолмен тексеруден айырмашылығы, TrustDoc.ai маңызды тұстарды жылдам көрсетіп, олардың неге қауіпті болуы мүмкін екенін түсіндіреді, осылайша сіз оны адвокатпен талқылай аласыз. Іске қосылғанда құжатты жүктеп, ұсынылған әрекеттері бар құрылымдалған нәтижелер аласыз. Біз сенімді, құпиялылығы қорғалған сервисті дамытып, бірлескен жұмыс пен интеграцияларды қосуды жоспарлап отырмыз.</p>
+  </div>
+</section>
+
+<section class="problems" id="problems">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow" data-lang="en">What problems we solve</p>
+      <p class="eyebrow" data-lang="ru" hidden>Какие проблемы решаем</p>
+      <p class="eyebrow" data-lang="kz" hidden>Қандай мәселелерді шешеміз</p>
+      <h2 data-lang="en">Real risks. Clear answers.</h2>
+      <h2 data-lang="ru" hidden>Реальные риски. Понятные ответы.</h2>
+      <h2 data-lang="kz" hidden>Нақты тәуекелдер. Түсінікті жауаптар.</h2>
+    </div>
+    <div class="pill-grid">
+      <div class="pill-card">
+        <span class="dot dot-red"></span>
+        <span data-lang="en">Hidden penalties and unilateral termination</span>
+        <span data-lang="ru" hidden>Скрытые штрафы и одностороннее расторжение</span>
+        <span data-lang="kz" hidden>Жасырын айыппұлдар және біржақты тоқтату</span>
+      </div>
+      <div class="pill-card">
+        <span class="dot dot-amber"></span>
+        <span data-lang="en">Auto-renewal clauses with long notice periods</span>
+        <span data-lang="ru" hidden>Пункты автопродления с длинным уведомлением</span>
+        <span data-lang="kz" hidden>Ұзақ хабарлау мерзімі бар автоұзарту тармақтары</span>
+      </div>
+      <div class="pill-card">
+        <span class="dot dot-green"></span>
+        <span data-lang="en">Payment terms without clear late-fee rules</span>
+        <span data-lang="ru" hidden>Условия оплаты без понятных штрафов за просрочку</span>
+        <span data-lang="kz" hidden>Төлем шарттары айқын айыппұлсыз</span>
+      </div>
+      <div class="pill-card">
+        <span class="dot dot-amber"></span>
+        <span data-lang="en">Compliance gaps with Kazakh regulations</span>
+        <span data-lang="ru" hidden>Пробелы в соответствии с законодательством РК</span>
+        <span data-lang="kz" hidden>ҚР заңнамасына сай келмеу тәуекелдері</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="audience" id="audience">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow" data-lang="en">Who is TrustDoc.ai for</p>
+      <p class="eyebrow" data-lang="ru" hidden>Для кого TrustDoc.ai</p>
+      <p class="eyebrow" data-lang="kz" hidden>TrustDoc.ai кімдерге арналған</p>
+
+      <h2 data-lang="en">Different users. One clear value for each.</h2>
+      <h2 data-lang="ru" hidden>Разные пользователи. Своя ценность для каждого.</h2>
+      <h2 data-lang="kz" hidden>Әр түрлі пайдаланушы. Әрқайсысына жеке құндылық.</h2>
+    </div>
+
+    <div class="benefits-grid">
+      <!-- Individuals -->
+      <article class="benefit-card">
+        <h3 data-lang="en">Individuals</h3>
+        <h3 data-lang="ru" hidden>Физические лица</h3>
+        <h3 data-lang="kz" hidden>Жеке тұлғалар</h3>
+
+        <p data-lang="en">
+          Understand contracts before signing. Spot penalties, auto-renewals,
+          and unfair clauses without legal background.
+        </p>
+        <p data-lang="ru" hidden>
+          Понимайте договор до подписания. Видьте штрафы, автопродления и
+          рискованные пункты без юридического образования.
+        </p>
+        <p data-lang="kz" hidden>
+          Келісімшартты қол қоймас бұрын түсініңіз. Айыппұлдар мен қауіпті
+          тармақтарды заң білімісіз анықтаңыз.
+        </p>
+      </article>
+
+      <!-- Freelancers -->
+      <article class="benefit-card">
+        <h3 data-lang="en">Freelancers</h3>
+        <h3 data-lang="ru" hidden>Фрилансеры</h3>
+        <h3 data-lang="kz" hidden>Фрилансерлер</h3>
+
+        <p data-lang="en">
+          Protect yourself from unpaid work and vague terms.
+          Get fast clarity on payment terms, termination, and liabilities.
+        </p>
+        <p data-lang="ru" hidden>
+          Защитите себя от неоплаты и размытых условий.
+          Быстро проверяйте оплату, расторжение и ответственность.
+        </p>
+        <p data-lang="kz" hidden>
+          Төлемсіз жұмыс пен түсініксіз шарттардан қорғаныңыз.
+          Төлем мен жауапкершілікті тез тексеріңіз.
+        </p>
+      </article>
+
+      <!-- Small business -->
+      <article class="benefit-card">
+        <h3 data-lang="en">Small &amp; growing businesses</h3>
+        <h3 data-lang="ru" hidden>Малый и растущий бизнес</h3>
+        <h3 data-lang="kz" hidden>Шағын және өсіп келе жатқан бизнес</h3>
+
+        <p data-lang="en">
+          Review contracts faster without hiring a lawyer for every document.
+          Reduce legal risk and save time.
+        </p>
+        <p data-lang="ru" hidden>
+          Проверяйте договоры быстрее без привлечения юриста на каждый документ.
+          Снижайте юридические риски и экономьте время.
+        </p>
+        <p data-lang="kz" hidden>
+          Әр құжатқа заңгер жалдамай-ақ келісімдерді тез тексеріңіз.
+          Заңдық тәуекелді азайтып, уақытты үнемдеңіз.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="benefits" id="benefits">
+  <div class="container">
+    <h2 data-lang="en">Why teams choose TrustDoc.ai</h2>
+    <h2 data-lang="ru" hidden>Почему выбирают TrustDoc.ai</h2>
+    <h2 data-lang="kz" hidden>TrustDoc.ai артықшылықтары</h2>
+    <div class="benefits-grid">
+      <article class="benefit-card">
+        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#4F46E5" opacity="0.12"/><path d="M18 24l5 5 8-11" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p data-lang="en">Instant risk highlights for contracts and documents</p>
+        <p data-lang="ru" hidden>Мгновенные подсветки рисков в договорах и документах</p>
+        <p data-lang="kz" hidden>Құжаттағы тәуекелдерді лезде белгілейді</p>
+      </article>
+      <article class="benefit-card">
+        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="10" width="28" height="28" rx="8" fill="#22C55E" opacity="0.12"/><path d="M17 24h14M17 19h14M17 29h9" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <p data-lang="en">Clear explanations and actionable suggestions</p>
+        <p data-lang="ru" hidden>Понятные объяснения и практичные рекомендации</p>
+        <p data-lang="kz" hidden>Түсінікті түсіндірмелер және әрекет ету ұсыныстары</p>
+      </article>
+      <article class="benefit-card">
+        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 20c0-6 4.5-10 12-10s12 4 12 10" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M14 28h20v6a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4v-6z" fill="#4F46E5" opacity="0.12"/><path d="M18 32h12" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <p data-lang="en">Affordable alternative to long legal reviews</p>
+        <p data-lang="ru" hidden>Доступная альтернатива долгим юридическим проверкам</p>
+        <p data-lang="kz" hidden>Ұзақ заңдық тексеруге балама, қолжетімді</p>
+      </article>
+      <article class="benefit-card">
+        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 16h16a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V20a4 4 0 0 1 4-4z" fill="#22C55E" opacity="0.12"/><path d="M20 20h8M18 24h12M18 28h12" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <p data-lang="en">Works right in your browser, no installs</p>
+        <p data-lang="ru" hidden>Работает в браузере, без установок</p>
+        <p data-lang="kz" hidden>Браузерде жұмыс істейді, орнату қажет емес</p>
+      </article>
+      <article class="benefit-card">
+        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 20h20l-4 14H18z" fill="#4F46E5" opacity="0.12"/><path d="M18 32l-4 8" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round"/><path d="M30 32l4 8" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="16" r="6" fill="#22C55E" opacity="0.2"/><path d="M24 11v10M19 16h10" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <p data-lang="en">Enterprise-ready roadmap: audit trail, team access, integrations</p>
+        <p data-lang="ru" hidden>В планах: аудит-лог, командный доступ, интеграции</p>
+        <p data-lang="kz" hidden>Жоспарда: аудит журналы, топтық қолжеткізу, интеграциялар</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works" id="how">
+  <div class="container">
+    <h2 data-lang="en">How it works</h2>
+    <h2 data-lang="ru" hidden>Как это работает</h2>
+    <h2 data-lang="kz" hidden>Қалай жұмыс істейді</h2>
+    <ol class="steps">
+      <li>
+        <div class="step-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 36 36"><rect x="6" y="8" width="24" height="20" rx="4" fill="#4F46E5" opacity="0.12"/><path d="M12 12h12M12 18h12M12 24h8" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <p data-lang="en">Upload document (PDF/DOCX)</p>
+        <p data-lang="ru" hidden>Загрузите документ (PDF/DOCX)</p>
+        <p data-lang="kz" hidden>Құжатты жүктеу (PDF/DOCX)</p>
+      </li>
+      <li>
+        <div class="step-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 36 36"><circle cx="18" cy="18" r="14" fill="#22C55E" opacity="0.12"/><path d="M12 18h12M18 12v12" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <p data-lang="en">Get instant highlights with reasons</p>
+        <p data-lang="ru" hidden>Получите подсветки и объяснения</p>
+        <p data-lang="kz" hidden>Нәтижелер мен түсіндірмелер</p>
+      </li>
+      <li>
+        <div class="step-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 36 36"><path d="M10 12h16v12H10z" fill="#4F46E5" opacity="0.12"/><path d="M14 16h8M14 20h5" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/><path d="M10 24l-2 4h20l-2-4" fill="#22C55E" opacity="0.2"/></svg></div>
+        <p data-lang="en">Save or share summary</p>
+        <p data-lang="ru" hidden>Сохраните или поделитесь резюме</p>
+        <p data-lang="kz" hidden>Есепті сақтау не бөлісу</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+
+
+
+
+<section class="cta-section" id="cta">
+  <div class="container cta-container">
+    <div class="cta-glow"></div>
+    <h2 data-lang="en">Ready to explore TrustDoc.ai?</h2>
+    <h2 data-lang="ru" hidden>Готовы попробовать TrustDoc.ai?</h2>
+    <h2 data-lang="kz" hidden>TrustDoc.ai-ды сынауға дайынсыз ба?</h2>
+    <p class="cta-sub" data-lang="en">Upload a contract, see risks, and act with confidence.</p>
+    <p class="cta-sub" data-lang="ru" hidden>Загрузите договор, увидьте риски и действуйте уверенно.</p>
+    <p class="cta-sub" data-lang="kz" hidden>Келісімшартты жүктеп, тәуекелдерді көріп, сенімді әрекет етіңіз.</p>
+    <a href="{{ url_for('product') }}" class="btn btn-primary btn-large" data-cta="cta-mid">
+      <span data-lang="en">Get Started</span>
+      <span data-lang="ru" hidden>Начать</span>
+      <span data-lang="kz" hidden>Бастау</span>
+    </a>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="container">
+    <h2 data-lang="en">Meet the team</h2>
+    <h2 data-lang="ru" hidden>Команда</h2>
+    <h2 data-lang="kz" hidden>Командамыз</h2>
+    <div class="team-grid">
+      <article class="team-card glass">
+        <div class="avatar-img">
+          <img src="/static/team/nurasyl.jpg" alt="Nurasyl Teberikov" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <span class="avatar-fallback"></span>
+        </div>
+        <h3><a href="https://www.linkedin.com/in/nurasyl-teberikov-baa3b8246/" target="_blank" rel="noreferrer">Nurasyl Teberikov</a></h3>
+        <p data-lang="en">CEO · KBTU · Aligns roadmap with KZ legal accuracy.</p>
+        <p data-lang="ru" hidden>Product Owner · KBTU · Связывает дорожную карту с точностью по законам РК.</p>
+        <p data-lang="kz" hidden>Product Owner · KBTU · Жол картасын ҚР заң дәлдігімен байланыстырады.</p>
+      </article>
+      <article class="team-card glass">
+        <div class="avatar-img">
+          <img src="/static/team/ayazhan.jpg" alt="Ayazhan Kumarkhanova" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <span class="avatar-fallback"></span>
+        </div>
+        <h3><a href="http://www.linkedin.com/in/kumarkhanova" target="_blank" rel="noreferrer">Ayazhan Kumarkhanova</a></h3>
+        <p data-lang="en">Backend Developer · KBTU · Builds secure AI pipelines and infrastructure.</p>
+        <p data-lang="ru" hidden>Backend Developer · KBTU · Создает безопасные AI-пайплайны и инфраструктуру.</p>
+        <p data-lang="kz" hidden>Backend Developer · KBTU · Қауіпсіз AI құбырлары мен инфрақұрылымды жасайды.</p>
+      </article>
+      <article class="team-card glass">
+        <div class="avatar-img">
+          <img src="/static/team/arman.jpg" alt="Arman Askerbay" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <span class="avatar-fallback"></span>
+        </div>
+        <h3><a href="https://www.linkedin.com/in/arman-askerbay-a89870328/" target="_blank" rel="noreferrer">Arman Askerbay</a></h3>
+        <p data-lang="en">Frontend Developer · KBTU · Crafts the premium TrustDoc.ai UX.</p>
+        <p data-lang="ru" hidden>Frontend Developer · KBTU · Создает премиальный UX TrustDoc.ai.</p>
+        <p data-lang="kz" hidden>Frontend Developer · KBTU · TrustDoc.ai премиум UX жасайды.</p>
+      </article>
+      <article class="team-card glass">
+        <div class="avatar-img">
+          <img src="/static/team/zhazira.jpg" alt="Zhazira Bazarbayeva" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <span class="avatar-fallback"></span>
+        </div>
+        <h3><a href="https://linkedin.com" target="_blank" rel="noreferrer">Zhazira Bazarbayeva</a></h3>
+        <p data-lang="en">QA &amp; Marketing · UIB · Ensures reliability and clear legal messaging.</p>
+        <p data-lang="ru" hidden>QA &amp; Marketing · UIB · Обеспечивает надежность и четкий юридический месседж.</p>
+        <p data-lang="kz" hidden>QA &amp; Marketing · UIB · Сенімділікті және нақты құқықтық хабарламаны қамтамасыз етеді.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="roadmap" id="roadmap">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow" data-lang="en">Roadmap</p>
+      <p class="eyebrow" data-lang="ru" hidden>Роадмап</p>
+      <p class="eyebrow" data-lang="kz" hidden>Жол картасы</p>
+      <h2 data-lang="en">Where we are and what's next</h2>
+      <h2 data-lang="ru" hidden>Где мы сейчас и что дальше</h2>
+      <h2 data-lang="kz" hidden>Қазір қайда және әрі қарай не болады</h2>
+    </div>
+    <div class="roadmap-groups">
+      <div class="roadmap-group">
+        <div class="roadmap-group-header">
+          <p class="eyebrow" data-lang="en">Now</p>
+          <p class="eyebrow" data-lang="ru" hidden>Сейчас</p>
+          <p class="eyebrow" data-lang="kz" hidden>Қазір</p>
+        </div>
+        <div class="roadmap-grid">
+          <article class="roadmap-card is-now" data-phase="now">
+            <div class="roadmap-meta">
+              <span class="roadmap-dot"></span>
+              <span class="roadmap-date">Sep 2025</span>
+            </div>
+            <h3 data-lang="en">Team formation &amp; idea validation</h3>
+            <h3 data-lang="ru" hidden>Формирование команды и проверка идеи</h3>
+            <h3 data-lang="kz" hidden>Команда құру және идеяны растау</h3>
+          </article>
+
+          <article class="roadmap-card is-now" data-phase="now">
+            <div class="roadmap-meta">
+              <span class="roadmap-dot"></span>
+              <span class="roadmap-date">Oct 2025</span>
+            </div>
+            <h3 data-lang="en">MVP architecture &amp; AI prototype</h3>
+            <h3 data-lang="ru" hidden>Архитектура MVP и AI-прототип</h3>
+            <h3 data-lang="kz" hidden>MVP архитектурасы және AI прототипі</h3>
+          </article>
+
+          <article class="roadmap-card is-now" data-phase="now">
+            <div class="roadmap-meta">
+              <span class="roadmap-dot"></span>
+              <span class="roadmap-date">Nov 2025</span>
+            </div>
+            <h3 data-lang="en">Multilingual landing &amp; early demos</h3>
+            <h3 data-lang="ru" hidden>Мультиязычный лендинг и ранние демо</h3>
+            <h3 data-lang="kz" hidden>Көптілді лендинг және ерте демо</h3>
+          </article>
+
+          <article class="roadmap-card is-now" data-phase="now">
+            <div class="roadmap-meta">
+              <span class="roadmap-dot"></span>
+              <span class="roadmap-date">Dec 2025</span>
+            </div>
+            <h3 data-lang="en">Product launch (file upload &amp; AI analysis)</h3>
+              <h3 data-lang="ru" hidden>Запуск продукта (загрузка файлов и AI-анализ)</h3>
+            <h3 data-lang="kz" hidden>Өнімді іске қосу (файл жүктеу және AI талдау)</h3>
+          </article>
+        </div>
+      </div>
+
+      <div class="roadmap-group">
+        <div class="roadmap-group-header">
+          <p class="eyebrow" data-lang="en">What’s Next</p>
+          <p class="eyebrow" data-lang="ru" hidden>Что дальше</p>
+          <p class="eyebrow" data-lang="kz" hidden>Әрі қарай</p>
+        </div>
+        <div class="roadmap-grid roadmap-grid--next">
+          <article class="roadmap-card is-next" data-phase="future">
+            <div class="roadmap-meta">
+              <span class="roadmap-dot"></span>
+              <span class="roadmap-date" data-lang="en">Legal accuracy expansion</span>
+              <span class="roadmap-date" data-lang="ru" hidden>Расширение юр. точности</span>
+              <span class="roadmap-date" data-lang="kz" hidden>Заңдық дәлдікті кеңейту</span>
+            </div>
+            <h3 data-lang="en">Kazakhstan law coverage</h3>
+            <h3 data-lang="ru" hidden>Покрытие законодательства Казахстана</h3>
+            <h3 data-lang="kz" hidden>Қазақстан заңнамасын қамту</h3>
+          </article>
+
+          <article class="roadmap-card is-next" data-phase="future">
+            <div class="roadmap-meta">
+              <span class="roadmap-dot"></span>
+              <span class="roadmap-date" data-lang="en">User accounts &amp; history</span>
+              <span class="roadmap-date" data-lang="ru" hidden>Аккаунты и история</span>
+              <span class="roadmap-date" data-lang="kz" hidden>Аккаунттар және тарих</span>
+            </div>
+            <h3 data-lang="en">Document history and saved runs</h3>
+            <h3 data-lang="ru" hidden>История документов и сохраненные сессии</h3>
+            <h3 data-lang="kz" hidden>Құжат тарихы және сақталған талдаулар</h3>
+          </article>
+
+          <article class="roadmap-card is-next" data-phase="future">
+            <div class="roadmap-meta">
+              <span class="roadmap-dot"></span>
+              <span class="roadmap-date" data-lang="en">Enterprise features</span>
+              <span class="roadmap-date" data-lang="ru" hidden>Энтерпрайз-функции</span>
+              <span class="roadmap-date" data-lang="kz" hidden>Энтерпрайз мүмкіндіктері</span>
+            </div>
+            <h3 data-lang="en">SSO, audit trail, retention controls</h3>
+            <h3 data-lang="ru" hidden>SSO, аудит-лог, политики хранения</h3>
+            <h3 data-lang="kz" hidden>SSO, аудит журналы, сақтау саясаты</h3>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <h2 data-lang="en">Frequently asked questions</h2>
+    <h2 data-lang="ru" hidden>Вопросы и ответы</h2>
+    <h2 data-lang="kz" hidden>Жиі қойылатын сұрақтар</h2>
+    <div class="accordion" role="region" aria-labelledby="faq-heading">
+      <div class="accordion-item">
+        <button class="accordion-trigger" type="button" aria-expanded="false" id="faq-q1" aria-controls="faq-a1">
+          <span data-lang="en">When will you launch?</span>
+          <span data-lang="ru" hidden>Когда состоится запуск?</span>
+          <span data-lang="kz" hidden>Қашан іске қосасыздар?</span>
+        </button>
+        <div class="accordion-panel" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+          <p data-lang="en">We are preparing a public beta; follow our updates to get early access.</p>
+          <p data-lang="ru" hidden>Мы готовим публичную бета-версию; следите за новостями, чтобы получить ранний доступ.</p>
+          <p data-lang="kz" hidden>Біз ашық бета-нұсқасын дайындап жатырмыз, ерте қолжеткізу үшін жаңалықтарды қадағалаңыз.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" type="button" aria-expanded="false" id="faq-q2" aria-controls="faq-a2">
+          <span data-lang="en">Will it replace lawyers?</span>
+          <span data-lang="ru" hidden>Заменит ли сервис юристов?</span>
+          <span data-lang="kz" hidden>Бұл қызмет заңгерлерді алмастыра ма?</span>
+        </button>
+        <div class="accordion-panel" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+          <p data-lang="en">No. TrustDoc.ai provides fast screening and explanations; final decisions remain with you and your legal counsel.</p>
+          <p data-lang="ru" hidden>Нет. TrustDoc.ai обеспечивает быструю проверку и объяснения; окончательные решения остаются за вами и вашим юристом.</p>
+          <p data-lang="kz" hidden>Жоқ. TrustDoc.ai жедел тексеріс пен түсіндірмелер береді, соңғы шешім сізде және заңгеріңізде.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" type="button" aria-expanded="false" id="faq-q3" aria-controls="faq-a3">
+          <span data-lang="en">What about data privacy?</span>
+          <span data-lang="ru" hidden>Как обстоят дела с приватностью данных?</span>
+          <span data-lang="kz" hidden>Деректердің құпиялығы қалай қорғалады?</span>
+        </button>
+        <div class="accordion-panel" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+          <p data-lang="en">Documents are processed securely; we’ll publish a detailed policy before launch.</p>
+          <p data-lang="ru" hidden>Документы обрабатываются безопасно; мы опубликуем подробную политику до запуска.</p>
+          <p data-lang="kz" hidden>Құжаттар қауіпсіз өңделеді; іске қоспай тұрып толық саясатты жариялаймыз.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" type="button" aria-expanded="false" id="faq-q4" aria-controls="faq-a4">
+          <span data-lang="en">Will there be a free plan?</span>
+          <span data-lang="ru" hidden>Будет ли бесплатный тариф?</span>
+          <span data-lang="kz" hidden>Тегін жоспар бола ма?</span>
+        </button>
+        <div class="accordion-panel" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+          <p data-lang="en">Early users will get a free trial; pricing will be announced at launch.</p>
+          <p data-lang="ru" hidden>Ранние пользователи получат бесплатный пробный период; цены объявим при запуске.</p>
+          <p data-lang="kz" hidden>Алғашқы пайдаланушыларға тегін сынақ беріледі, тарифтер іске қосу кезінде жарияланады.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" type="button" aria-expanded="false" id="faq-q5" aria-controls="faq-a5">
+          <span data-lang="en">Can I use it for enterprise documents?</span>
+          <span data-lang="ru" hidden>Подходит ли сервис для корпоративных документов?</span>
+          <span data-lang="kz" hidden>Кәсіпорын құжаттарына жарай ма?</span>
+        </button>
+        <div class="accordion-panel" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+          <p data-lang="en">Yes, our roadmap includes enterprise features like audit trails, team roles, and integrations.</p>
+          <p data-lang="ru" hidden>Да, в дорожной карте — функции для бизнеса: аудит-лог, роли, интеграции.</p>
+          <p data-lang="kz" hidden>Иә, жоспарымызда аудит журналы, рөлдер және интеграциялар сияқты кәсіпорын мүмкіндіктері бар.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" type="button" aria-expanded="false" id="faq-q6" aria-controls="faq-a6">
+          <span data-lang="en">How can I stay informed?</span>
+          <span data-lang="ru" hidden>Как оставаться в курсе?</span>
+          <span data-lang="kz" hidden>Жаңалықтарды қалай біліп отырамын?</span>
+        </button>
+        <div class="accordion-panel" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden>
+          <p data-lang="en">Follow us on social media and check the product page for updates.</p>
+          <p data-lang="ru" hidden>Следите за нами в соцсетях и проверяйте страницу продукта для обновлений.</p>
+          <p data-lang="kz" hidden>Әлеуметтік желілерде бізді бақылаңыз және жаңартулар үшін өнім бетіне кіріңіз.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

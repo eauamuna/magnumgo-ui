@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="upload" class="upload-section">
+  <div class="container">
+    <div class="upload-card glass">
+      <h1 data-lang="en">TrustDoc.ai — Smart Document Analyzer</h1>
+      <h1 data-lang="ru" hidden>TrustDoc.ai — Умный анализатор документов</h1>
+      <h1 data-lang="kz" hidden>TrustDoc.ai — Құжаттарды ақылды талдаушы</h1>
+
+      <p class="upload-sub" data-lang="en">Upload your contract (.pdf or .docx) for instant risk analysis.</p>
+      <p class="upload-sub" data-lang="ru" hidden>Загрузите договор (.pdf или .docx) для мгновенного анализа рисков с опорой на законодательство РК.</p>
+      <p class="upload-sub" data-lang="kz" hidden>Келісімшартты (.pdf немесе .docx) жүктеп, ҚР заңнамасына негізделген тәуекел талдауын алыңыз.</p>
+
+      <form id="upload-form" enctype="multipart/form-data" novalidate>
+        <label class="file-input dropzone" for="file">
+          <input type="file" id="file" name="file" accept=".pdf,.docx" required>
+          <div class="dropzone-inner">
+            <div class="drop-icon">⬆︎</div>
+            <div class="file-label" data-lang="en" data-default="Choose or drop a file">Choose or drop a file</div>
+            <div class="file-label" data-lang="ru" hidden data-default="Выберите или перетащите файл">Выберите или перетащите файл</div>
+            <div class="file-label" data-lang="kz" hidden data-default="Файлды таңдаңыз немесе сүйреңіз">Файлды таңдаңыз немесе сүйреңіз</div>
+          </div>
+        </label>
+        <div class="upload-actions">
+          <button type="submit" class="btn btn-primary">
+            <span data-lang="en">Analyze Document</span>
+            <span data-lang="ru" hidden>Анализировать документ</span>
+            <span data-lang="kz" hidden>Құжатты талдау</span>
+          </button>
+          <p class="microcopy" data-lang="en">This analysis does not replace a licensed lawyer.</p>
+          <p class="microcopy" data-lang="ru" hidden>Этот анализ не заменяет консультацию лицензированного юриста.</p>
+          <p class="microcopy" data-lang="kz" hidden>Бұл талдау лицензияланған адвокатты алмастырмайды.</p>
+        </div>
+      </form>
+
+      <div id="analysis-result" class="analysis-output" aria-live="polite" hidden></div>
+    </div>
+  </div>
+</section>
+{% endblock %}
