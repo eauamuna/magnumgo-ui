@@ -1,0 +1,11 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+footer {
+  font-size: 0.9rem;
+}
