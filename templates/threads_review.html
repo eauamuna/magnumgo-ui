@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Threads App Review Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .block {
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    input {
+      padding: 8px;
+      width: 60%;
+    }
+    button {
+      padding: 8px 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    ul {
+      margin-top: 15px;
+    }
+    li {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Threads App Review Demo</h1>
+  <p>This page demonstrates Threads OAuth login and keyword search functionality.</p>
+
+  <div class="block">
+    <h2>1. Login with Threads</h2>
+    <a href="/threads/login">
+      <button>Login with Threads</button>
+    </a>
+  </div>
+
+  <div class="block">
+    <h2>2. Keyword Search</h2>
+    <form method="POST" action="/threads/search">
+      <input
+        type="text"
+        name="keyword"
+        placeholder="Enter keyword (e.g. magnum)"
+        required
+      />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  {% if results %}
+  <div class="block">
+    <h2>3. Search Results</h2>
+    <ul>
+      {% for post in results %}
+        <li>
+          <strong>@{{ post.username }}</strong><br>
+          {{ post.text }}<br>
+          <a href="{{ post.permalink }}" target="_blank">View post</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+</body>
+</html>
