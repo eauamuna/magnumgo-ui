@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title"
+    data-title-en="{{ title_en }}"
+    data-title-ru="{{ title_ru }}"
+    data-title-kz="{{ title_kz }}">{{ title_en }}</title>
+  <meta id="meta-description" name="description"
+    content="{{ description_en }}"
+    data-description-en="{{ description_en }}"
+    data-description-ru="{{ description_ru }}"
+    data-description-kz="{{ description_kz }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TrustDoc.ai — Smart Document Analyzer">
+  <meta property="og:description" content="Upload your contract and get instant AI-powered risk insights.">
+  <meta property="og:image" content="https://dummyimage.com/1200x630/4F46E5/ffffff.png&amp;text=TrustDoc.ai">
+  <meta property="og:url" content="https://trustdoc.ai/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234F46E5'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='32' font-family='Manrope, Arial, sans-serif' fill='%23ffffff'%3ET%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TrustDoc.ai",
+    "url": "https://trustdoc.ai",
+    "sameAs": [
+      "https://www.linkedin.com/company/trustdoc-ai",
+      "https://twitter.com/trustdoc_ai"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://trustdoc.ai",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://trustdoc.ai/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  {% block extra_head %}{% endblock %}
+</head>
+<script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="{{ url_for('index') }}" class="logo" aria-label="TrustDoc.ai home">TrustDoc.ai</a>
+      <nav class="header-actions" aria-label="Primary">
+        <div class="nav-links">
+          <a class="nav-link" href="#about">
+            <span data-lang="en">About</span>
+            <span data-lang="ru" hidden>О проекте</span>
+            <span data-lang="kz" hidden>Жоба туралы</span>
+          </a>
+          <a class="nav-link" href="#team">
+            <span data-lang="en">Team</span>
+            <span data-lang="ru" hidden>Команда</span>
+            <span data-lang="kz" hidden>Команда</span>
+          </a>
+          <a class="nav-link" href="#roadmap">
+            <span data-lang="en">Roadmap</span>
+            <span data-lang="ru" hidden>Роадмап</span>
+            <span data-lang="kz" hidden>Жол картасы</span>
+          </a>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <button type="button" class="lang-btn is-active" data-lang-target="en">EN</button>
+          <button type="button" class="lang-btn" data-lang-target="ru">RU</button>
+          <button type="button" class="lang-btn" data-lang-target="kz">KZ</button>
+        </div>
+        <a href="{{ url_for('product') }}" class="btn btn-primary" data-cta="header-product">
+          <span data-lang="en">Get Started</span>
+          <span data-lang="ru" hidden>Начать</span>
+          <span data-lang="kz" hidden>Бастау</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="logo">TrustDoc.ai</span>
+        <p class="footer-copy" data-lang="en">Email: hello@trustdoc.ai · Phone: +7 771 804 1573 · Address: Almaty, Kazakhstan</p>
+        <p class="footer-copy" data-lang="ru" hidden>Email: hello@trustdoc.ai · Телефон: +7 771 804 1573 · Адрес: Казахстан, Алматы</p>
+        <p class="footer-copy" data-lang="kz" hidden>Email: hello@trustdoc.ai · Телефон: +7 771 804 1573 · Мекенжай: Алматы, Қазақстан</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:hello@trustdoc.ai">hello@trustdoc.ai</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>
