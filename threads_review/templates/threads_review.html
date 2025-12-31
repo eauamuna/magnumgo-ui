@@ -1,34 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Threads Keyword Search – App Review Demo</title>
-</head>
-<body>
-<h2>Threads Keyword Search (Demo)</h2>
+{% extends "base.html" %}
 
-<a href="/threads/login">
-    <button>Login with Threads</button>
-</a>
+{% block content %}
 
-<hr>
+<div class="card shadow-sm">
+  <div class="card-body">
 
-<form method="post" action="/threads/search">
-    <input name="keyword" placeholder="Enter keyword" required>
-    <button type="submit">Search</button>
-</form>
+    <h2 class="mb-3">Threads Keyword Search</h2>
+    <p class="text-muted">
+      This demo shows how the application uses the Threads API
+      to search public posts by keyword after user authorization.
+    </p>
+
+    {% if not access_token %}
+      <a href="/threads/login" class="btn btn-primary">
+        Login with Threads
+      </a>
+    {% else %}
+
+      <form method="post" action="/threads/search" class="row g-3 mt-3">
+        <div class="col-md-8">
+          <input
+            type="text"
+            name="keyword"
+            class="form-control"
+            placeholder="Enter keyword (e.g. magnum)"
+            required
+          >
+        </div>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-success w-100">
+            Search
+          </button>
+        </div>
+      </form>
+
+    {% endif %}
+  </div>
+</div>
 
 {% if results %}
-<hr>
-<ul>
-{% for post in results %}
-    <li>
-        <b>@{{ post.username }}</b><br>
-        {{ post.text }}<br>
-        <a href="{{ post.permalink }}" target="_blank">View</a>
-    </li>
-{% endfor %}
-</ul>
+  <div class="mt-4">
+    <h4>Search Results</h4>
+
+    {% for post in results %}
+      <div class="card mb-3">
+        <div class="card-body">
+          <p class="mb-1">{{ post.text }}</p>
+          <small class="text-muted">
+            @{{ post.username }} · {{ post.timestamp }}
+          </small><br>
+          <a href="{{ post.permalink }}" target="_blank">Open post</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 {% endif %}
 
-</body>
-</html>
+{% endblock %}
