@@ -1,5 +1,6 @@
 """Flask backend for the TrustDoc.ai landing and document analysis MVP."""
 from threads_review.routes import threads_review_bp
+from flask import redirect
 
 import os
 from io import BytesIO
@@ -144,6 +145,15 @@ DESCRIPTION_COPY: Dict[str, Tuple[str, str, str]] = {
 }
 
 app = Flask(__name__)
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "dev-secret")
+
+CLIENT_ID = os.getenv("THREADS_CLIENT_ID")
+CLIENT_SECRET = os.getenv("THREADS_CLIENT_SECRET")
+REDIRECT_URI = os.getenv("THREADS_REDIRECT_URI")
+
+AUTH_URL = "https://www.threads.net/oauth/authorize"
+TOKEN_URL = "https://graph.threads.net/oauth/access_token"
+API_BASE = "https://graph.threads.net/v1.0"
 CORS(app)
 
 _openai_client: OpenAI | None = None
@@ -240,6 +250,57 @@ def _analyze_with_openai(text: str) -> str:
     if not analysis:
         raise RuntimeError("Received an empty response from the AI service.")
     return analysis
+    
+@app.route("/threads-review")
+def threads_review():
+    return render_template("threads_review.html", results=None)
+
+@app.route("/threads/login")
+def threads_login():
+    url = (
+        f"{AUTH_URL}"
+        f"?client_id={CLIENT_ID}"
+        f"&redirect_uri={REDIRECT_URI}"
+        f"&response_type=code"
+        f"&scope=threads_basic,threads_keyword_search"
+    )
+    return redirect(url)
+
+@app.route("/threads/callback")
+def threads_callback():
+    code = request.args.get("code")
+
+    token_response = requests.post(
+        TOKEN_URL,
+        data={
+            "client_id": CLIENT_ID,
+            "client_secret": CLIENT_SECRET,
+            "redirect_uri": REDIRECT_URI,
+            "code": code,
+            "grant_type": "authorization_code",
+        },
+    ).json()
+
+    session["threads_token"] = token_response.get("access_token")
+    return redirect("/threads-review")
+
+@app.route("/threads/search", methods=["POST"])
+def threads_search():
+    keyword = request.form.get("keyword")
+    token = session.get("threads_token")
+
+    response = requests.get(
+        f"{API_BASE}/keyword_search",
+        params={
+            "q": keyword,
+            "search_type": "TOP",
+            "fields": "id,text,username,permalink,timestamp",
+            "access_token": token,
+        },
+    )
+
+    results = response.json().get("data", [])
+    return render_template("threads_review.html", results=results)
 
 
 @app.route("/")
