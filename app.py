@@ -3,6 +3,7 @@ from threads_review.routes import threads_review_bp
 from flask import redirect
 
 import os
+import requests
 from io import BytesIO
 from typing import Dict, Tuple
 
