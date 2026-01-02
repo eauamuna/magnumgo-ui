@@ -56,6 +56,8 @@ def threads_callback():
 
     session["threads_token"] = token["access_token"]
     return redirect("/threads-review")
+    print("CLIENT_ID:", CLIENT_ID)
+    print("REDIRECT_URI:", REDIRECT_URI)
 
 
 @threads_review_bp.route("/threads/search", methods=["POST"])
@@ -75,4 +77,5 @@ def keyword_search():
 
     data = resp.json().get("data", [])
     return render_template("threads_review.html", results=data)
+
 
