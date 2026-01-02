@@ -350,4 +350,3 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=port, debug=False)
 
 app.register_blueprint(threads_review_bp)
-app.secret_key = os.getenv("FLASK_SECRET_KEY", "dev-secret")
