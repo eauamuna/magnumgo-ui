@@ -2,7 +2,6 @@
 from threads_review.routes import threads_review_bp
 from flask import redirect
 from flask import session
-
 import os
 import requests
 from io import BytesIO
@@ -304,7 +303,22 @@ def threads_search():
     results = response.json().get("data", [])
     return render_template("threads_review.html", results=results)
 
+@app.route("/data-deletion", methods=["POST", "GET"])
+def data_deletion():
+    # Meta требует, чтобы endpoint существовал и отвечал 200
+    return jsonify({
+        "status": "ok",
+        "message": "No user data is stored on this service."
+    }), 200
 
+
+@app.route("/app-deauthorization", methods=["POST", "GET"])
+def app_deauthorization():
+    return jsonify({
+        "status": "ok",
+        "message": "Application deauthorization received."
+    }), 200
+    
 @app.route("/")
 def index():
     return redirect("/threads-review")
