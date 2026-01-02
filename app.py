@@ -1,6 +1,7 @@
 """Flask backend for the TrustDoc.ai landing and document analysis MVP."""
 from threads_review.routes import threads_review_bp
 from flask import redirect
+from flask import session
 
 import os
 import requests
