@@ -32,7 +32,11 @@ def threads_login():
 @threads_review_bp.route("/threads/callback")
 def threads_callback():
     code = request.args.get("code")
-    token = requests.post(
+
+    if not code:
+        return "No code returned from Threads", 400
+
+    resp = requests.post(
         TOKEN_URL,
         data={
             "client_id": CLIENT_ID,
@@ -41,9 +45,16 @@ def threads_callback():
             "code": code,
             "grant_type": "authorization_code",
         },
-    ).json()
+    )
 
-    session["threads_token"] = token.get("access_token")
+    token = resp.json()
+    print("THREADS TOKEN RESPONSE:", token)
+
+    # 🔴 ВОТ ЗДЕСЬ НУЖНА ЭТА ПРОВЕРКА
+    if "access_token" not in token:
+        return f"OAuth error: {token}", 400
+
+    session["threads_token"] = token["access_token"]
     return redirect("/threads-review")
 
 
@@ -64,3 +75,4 @@ def keyword_search():
 
     data = resp.json().get("data", [])
     return render_template("threads_review.html", results=data)
+
