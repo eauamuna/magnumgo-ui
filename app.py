@@ -304,44 +304,8 @@ def threads_search():
 
 
 @app.route("/")
-def index() -> str:
-    return render_template("index.html", **_metadata("index"))
-
-
-@app.route("/product")
-def product() -> str:
-    return render_template("product.html", **_metadata("product"))
-
-
-@app.route("/analyze", methods=["POST"])
-def analyze():
-    file = request.files.get("file")
-    if not file or file.filename == "":
-        return jsonify({"status": "error", "message": "File is required."}), 400
-
-    extension = os.path.splitext(file.filename)[1].lower()
-    if extension not in ALLOWED_EXTENSIONS:
-        return jsonify({"status": "error", "message": "Unsupported file type."}), 400
-
-    try:
-        text = _extract_text(file, extension)
-    except ValueError as exc:
-        return jsonify({"status": "error", "message": str(exc)}), 400
-    except Exception as exc:  # pragma: no cover - defensive fallback
-        return jsonify({"status": "error", "message": f"Failed to read document: {exc}"}), 500
-
-    try:
-        analysis = _analyze_with_openai(text)
-    except ValueError as exc:
-        return jsonify({"status": "error", "message": str(exc)}), 400
-    except RuntimeError as exc:
-        return jsonify({"status": "error", "message": str(exc)}), 500
-    except Exception as exc:  # pragma: no cover - external dependency failure
-        return jsonify({"status": "error", "message": f"AI analysis failed: {exc}"}), 502
-
-    html_output = markdown.markdown(analysis, extensions=["extra", "tables"])
-
-    return jsonify({"result": html_output})
+def index():
+    return redirect("/threads-review")
 
 
 if __name__ == "__main__":
